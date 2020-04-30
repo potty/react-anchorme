@@ -1,9 +1,22 @@
 {
   "name": "react-anchorme",
+  "description": "React component to detect links in text and make them clickable",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Pavel Potacek <potacek.pavel@gmail.com>",
+  "main": "dist/react-anchorme.js",
+  "module": "dist/react-anchorme.es.js",
+  "types": "dist/types.d.ts",
+  "author": "Pavel Potáček <potacek.pavel@gmail.com>",
   "license": "MIT",
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "yarn lint:check --fix && yarn prettier",
+    "lint:check": "eslint ./src --ext .tsx,.ts --report-unused-disable-directives",
+    "prettier": "prettier --write './src/**/*.ts' './src/**/*.tsx'",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --runInBand --coverage",
+    "test:watch": "yarn test:coverage -- --watchAll"
+  },
   "dependencies": {
     "anchorme": "^2.0.0"
   },
@@ -11,12 +24,29 @@
     "react": "^16.8.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.3",
+    "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^3.0.0",
     "husky": "^4.2.5",
+    "jest": "^25.5.1",
     "lint-staged": "^10.2.0",
     "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rollup": "^2.7.5",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
   "husky": {

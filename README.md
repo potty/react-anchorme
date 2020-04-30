@@ -28,5 +28,7 @@ const SomeComponent = () => {
 
 Custom props for anchors:
 ```jsx static
-<Anchorme target="_blank" rel="noreferrer noopener">Lorem ipsum http://example.loc dolor sit amet</Anchorme>
+<Anchorme target="_blank" rel="noreferrer noopener">
+    Lorem ipsum http://example.loc dolor sit amet
+</Anchorme>
 ```

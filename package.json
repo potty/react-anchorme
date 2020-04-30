@@ -1,5 +1,6 @@
 {
   "name": "react-anchorme",
+  "description": "React component to detect links in text and make them clickable",
   "version": "1.0.0",
   "main": "dist/react-anchorme.js",
   "module": "dist/react-anchorme.es.js",

@@ -23,7 +23,8 @@
     "prepublishOnly": "yarn lint && yarn test && yarn clean && yarn build"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "dependencies": {
     "anchorme": "^2.0.0"

@@ -2,22 +2,19 @@
   "compilerOptions": {
     "sourceMap": true,
     "module": "esnext",
-    "target": "es2017",
+    "target": "es2018",
+    "rootDir": "src",
+    "outDir": "dist",
     "moduleResolution": "node",
-    "outDir": "./dist",
+    "esModuleInterop": true,
     "jsx": "react",
     "skipLibCheck": true,
     "declaration": true,
-    "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["dom", "esnext"],
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true
+    "noUnusedParameters": true
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["src/*.test.ts", "src/*.test.tsx"]
 }

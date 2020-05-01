@@ -1,22 +1,30 @@
 {
   "name": "react-anchorme",
-  "description": "React component to detect links in text and make them clickable",
   "version": "1.0.0",
+  "description": "React component to detect links in text and make them clickable",
+  "repository": "https://github.com/potty/react-anchorme",
   "main": "dist/react-anchorme.js",
-  "module": "dist/react-anchorme.es.js",
-  "types": "dist/types.d.ts",
+  "module": "dist/react-anchorme.esm.js",
+  "types": "dist/index.d.ts",
   "author": "Pavel Potáček <potacek.pavel@gmail.com>",
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "yarn clean",
     "build": "rollup -c",
     "lint": "yarn lint:check --fix && yarn prettier",
     "lint:check": "eslint ./src --ext .tsx,.ts --report-unused-disable-directives",
     "prettier": "prettier --write './src/**/*.ts' './src/**/*.tsx'",
+    "release": "np",
     "test": "jest --runInBand",
     "test:coverage": "jest --runInBand --coverage",
-    "test:watch": "yarn test:coverage -- --watchAll"
+    "test:watch": "yarn test:coverage -- --watchAll",
+    "prepublishOnly": "yarn lint && yarn test && yarn clean && yarn build"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "anchorme": "^2.0.0"
   },
@@ -40,10 +48,12 @@
     "husky": "^4.2.5",
     "jest": "^25.5.1",
     "lint-staged": "^10.2.0",
+    "np": "^6.2.3",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rollup": "^2.7.5",
+    "rollup-plugin-sizes": "^1.0.2",
     "rollup-plugin-terser": "^5.3.0",
     "rollup-plugin-typescript2": "^0.27.0",
     "ts-jest": "^25.4.0",

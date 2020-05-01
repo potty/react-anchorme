@@ -25,6 +25,9 @@
   "files": [
     "dist"
   ],
+  "np": {
+    "contents": "dist"
+  },
   "dependencies": {
     "anchorme": "^2.0.0"
   },

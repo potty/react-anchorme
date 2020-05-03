@@ -1,6 +1,6 @@
 # react-anchorme
   
-![](https://github.com/potty/react-anchorme/workflows/Tests/badge.svg)
+![](https://github.com/potty/react-anchorme/workflows/Tests/badge.svg) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/react-anchorme)](https://bundlephobia.com/result?p=react-anchorme) ![David](https://img.shields.io/david/potty/react-anchorme)
 
 React component using [Anchorme.js](https://github.com/alexcorvi/anchorme.js) to detect urls and emails in a text and converts them into clickable HTML links.
 

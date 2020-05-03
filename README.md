@@ -1,6 +1,8 @@
 # react-anchorme
   
-![](https://github.com/actions/potty/react-anchorme/Tests/badge.svg)
+![](https://github.com/potty/react-anchorme/workflows/Tests/badge.svg)
+
+React component using [Anchorme.js](https://github.com/alexcorvi/anchorme.js) to detect urls and emails in a text and converts them into clickable HTML links.
 
 ## 🚀 Installation
 
@@ -16,7 +18,7 @@ yarn add react-anchorme
 
 ### Basic usage
 
-Component takes string as a children, detects urls, emails, IP addresses in it and replaces them with clickable links.
+Component takes string as a children, detects urls, emails, IP addresses in it and replaces them with clickable HTML links.
 
 ```jsx static
 import React from 'react'

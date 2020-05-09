@@ -27,7 +27,7 @@
     "README.md"
   ],
   "dependencies": {
-    "anchorme": "^2.0.0"
+    "anchorme": "^2.1.2"
   },
   "peerDependencies": {
     "react": "^16.8.0"
@@ -40,7 +40,7 @@
     "@types/react-dom": "^16.9.7",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
-    "eslint": "^6.8.0",
+    "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.3",

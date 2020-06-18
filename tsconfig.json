@@ -2,7 +2,7 @@
   "compilerOptions": {
     "sourceMap": true,
     "module": "esnext",
-    "target": "es2018",
+    "target": "es5",
     "rootDir": "src",
     "outDir": "dist",
     "moduleResolution": "node",

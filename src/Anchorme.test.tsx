@@ -3,6 +3,7 @@ import { render } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import Anchorme from './Anchorme'
+import { LinkComponentProps } from './Link'
 
 describe('Anchorme', () => {
 	const URL = 'http://www.example.loc'
@@ -61,5 +62,91 @@ describe('Anchorme', () => {
 		expect(linkEl?.target).toBe('_blank')
 		expect(linkEl?.rel).toBe('noreferrer noopener')
 		expect(getByText(URL)).toBeInTheDocument()
+	})
+
+	it('should render with custom link component', () => {
+		function CustomLink(props: LinkComponentProps) {
+			return (
+				<i>
+					<a {...props} />
+				</i>
+			)
+		}
+
+		const { container, getByText } = render(
+			<Anchorme
+				LinkComponent={CustomLink}
+				target="_blank"
+				rel="noreferrer noopener"
+			>
+				{URL}
+			</Anchorme>,
+		)
+
+		const linkEl = container.querySelector('a')
+		expect(linkEl).not.toBeNull()
+		expect(linkEl?.href).toBe(`${URL}/`)
+		expect(linkEl?.target).toBe('_blank')
+		expect(linkEl?.rel).toBe('noreferrer noopener')
+		expect(getByText(URL)).toBeInTheDocument()
+	})
+
+	it('should render with custom component', () => {
+		const customCallback = jest.fn()
+
+		function CustomLink({ href, children }: LinkComponentProps) {
+			return (
+				<strong>
+					<span onClick={() => customCallback(href)}>{children}</span>
+				</strong>
+			)
+		}
+
+		const { container, getByText } = render(
+			<Anchorme LinkComponent={CustomLink}>{URL}</Anchorme>,
+		)
+
+		const linkEl = container.querySelector('span')
+		expect(linkEl).not.toBeNull()
+		expect(getByText(URL)).toBeInTheDocument()
+
+		linkEl?.click()
+		expect(customCallback).toHaveBeenCalledTimes(1)
+		expect(customCallback).toHaveBeenCalledWith(URL)
+	})
+
+	it('should render with custom inline component', () => {
+		const customCallback = jest.fn()
+
+		const { container, getByText } = render(
+			<Anchorme
+				LinkComponent={({ href, children }) => (
+					<a
+						href={href}
+						onClick={(event) => {
+							event.preventDefault()
+							customCallback('link click')
+						}}
+						target="_blank"
+						rel="noreferrer noopener"
+					>
+						{children}
+					</a>
+				)}
+			>
+				{URL}
+			</Anchorme>,
+		)
+
+		const linkEl = container.querySelector('a')
+		expect(linkEl).not.toBeNull()
+		expect(linkEl?.href).toBe(`${URL}/`)
+		expect(linkEl?.target).toBe('_blank')
+		expect(linkEl?.rel).toBe('noreferrer noopener')
+		expect(getByText(URL)).toBeInTheDocument()
+
+		linkEl?.click()
+		expect(customCallback).toHaveBeenCalledTimes(1)
+		expect(customCallback).toHaveBeenCalledWith('link click')
 	})
 })

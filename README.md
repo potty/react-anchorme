@@ -47,3 +47,28 @@ const SomeComponent = () => {
   )
 }
 ```
+
+### Custom link component
+
+You can set custom link component that is rendered instead of default anchor element.
+
+```jsx static
+import React from 'react'
+import { Anchorme, LinkComponentProps } from 'react-anchorme'
+
+const SomeComponent = () => {
+  const CustomLink = (props: LinkComponentProps) => {
+    return (
+      <i>
+         <a {...props} />
+      </i>
+    )
+  }
+
+  return (
+    <Anchorme linkComponent={CustomLink} target="_blank" rel="noreferrer noopener">
+        Lorem ipsum http://example.loc dolor sit amet
+    </Anchorme>
+  )
+}
+```

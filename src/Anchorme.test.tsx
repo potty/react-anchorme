@@ -10,7 +10,7 @@ describe('Anchorme', () => {
 	const EMAIL = 'foo@bar.com'
 	const IP = '127.0.0.1'
 
-	const expectLink = (el: HTMLElement, url: string) => {
+	const expectLink = (el: Element, url: string) => {
 		const linkEl = el.querySelector('a')
 		expect(linkEl).not.toBeNull()
 		expect(linkEl?.href).toBe(url)

@@ -48,6 +48,23 @@ const SomeComponent = () => {
 }
 ```
 
+### Truncate
+
+You can truncate link text by setting up `truncate` prop:
+
+```jsx static
+import React from 'react'
+import { Anchorme } from 'react-anchorme'
+
+const SomeComponent = () => {
+  return (
+    <Anchorme truncate={5}>
+        Lorem ipsum example.com dolor sit amet
+    </Anchorme>
+  )
+}
+```
+
 ### Custom link component
 
 You can set custom link component that is rendered instead of default anchor element.

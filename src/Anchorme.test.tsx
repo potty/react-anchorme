@@ -5,7 +5,8 @@ import '@testing-library/jest-dom/extend-expect'
 import Anchorme from './Anchorme'
 import { LinkComponentProps } from './types'
 
-const URL = 'http://www.example.loc'
+const URL = 'http://www.example.com'
+const URL_WITHOUT_PROTOCOL = 'example.com'
 const EMAIL = 'foo@bar.com'
 const IP = '127.0.0.1'
 
@@ -60,6 +61,22 @@ it('should render link with custom props', () => {
 	expect(linkEl?.href).toBe(`${URL}/`)
 	expect(linkEl?.target).toBe('_blank')
 	expect(linkEl?.rel).toBe('noreferrer noopener')
+	expect(getByText(URL)).toBeInTheDocument()
+})
+
+it('should render link with truncated text', () => {
+	const { container, getByText } = render(
+		<Anchorme truncate={3}>{URL_WITHOUT_PROTOCOL}</Anchorme>,
+	)
+	expectLink(container, `http://${URL_WITHOUT_PROTOCOL}/`)
+	expect(getByText(`exa…`)).toBeInTheDocument()
+})
+
+it('should render link with non truncated text', () => {
+	const { container, getByText } = render(
+		<Anchorme truncate={50}>{URL}</Anchorme>,
+	)
+	expectLink(container, `${URL}/`)
 	expect(getByText(URL)).toBeInTheDocument()
 })
 

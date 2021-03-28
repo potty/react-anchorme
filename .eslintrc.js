@@ -6,6 +6,7 @@ module.exports = {
 		jest: true,
 		node: true,
 	},
+	plugins: ['react', 'prettier', '@typescript-eslint'],
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
@@ -13,10 +14,7 @@ module.exports = {
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
 		'prettier',
-		'prettier/@typescript-eslint',
-		'prettier/react',
 	],
-	plugins: ['react', 'prettier', '@typescript-eslint'],
 	globals: {
 		Atomics: 'readonly',
 		SharedArrayBuffer: 'readonly',

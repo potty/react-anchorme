@@ -73,15 +73,15 @@ You can set custom link component that is rendered instead of default anchor ele
 import React from 'react'
 import { Anchorme, LinkComponentProps } from 'react-anchorme'
 
-const SomeComponent = () => {
-  const CustomLink = (props: LinkComponentProps) => {
-    return (
-      <i>
-         <a {...props} />
-      </i>
-    )
-  }
+const CustomLink = (props: LinkComponentProps) => {
+  return (
+    <i>
+      <a {...props} />
+    </i>
+  )
+}
 
+const SomeComponent = () => {
   return (
     <Anchorme linkComponent={CustomLink} target="_blank" rel="noreferrer noopener">
         Lorem ipsum http://example.loc dolor sit amet

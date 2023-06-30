@@ -28,7 +28,7 @@
     "README.md"
   ],
   "dependencies": {
-    "anchorme": "^2.1.2"
+    "anchorme": "^3.0.5"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18"

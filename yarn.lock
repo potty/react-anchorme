@@ -1006,10 +1006,10 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-anchorme@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/anchorme/-/anchorme-2.1.2.tgz#4abc7e128a8a42d0036a61ebb9b18bbc032fa52a"
-  integrity sha512-2iPY3kxDDZvtRzauqKDb4v7a5sTF4GZ+esQTY8nGYvmhAtGTeFPMn4cRnvyWS1qmtPTP0Mv8hyLOp9l3ZzWMKg==
+anchorme@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/anchorme/-/anchorme-3.0.5.tgz#63110d2d8ddaaa93dbc40ecc21f0605a286a8934"
+  integrity sha512-QWbJ67wZsxVdNPDMkhNcfA7Dkeg51F+lerieeL4mc16zJASFWw1D2TUcueo99Xh/EBMjV0M5ah9Gl3YkNERqig==
 
 ansi-escapes@^4.2.1, ansi-escapes@^4.3.0:
   version "4.3.2"

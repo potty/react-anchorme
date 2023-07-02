@@ -13,7 +13,7 @@
     "clean": "rm -rf dist",
     "prebuild": "pnpm clean",
     "build": "rollup -c",
-    "lint": "pnpm lint:check --fix && yarn prettier",
+    "lint": "pnpm lint:check --fix && pnpm prettier",
     "lint:check": "eslint ./src --ext .tsx,.ts --report-unused-disable-directives",
     "prettier": "prettier --write './src/**/*.ts' './src/**/*.tsx'",
     "release": "np",

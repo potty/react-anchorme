@@ -12,6 +12,9 @@ npm i react-anchorme
 
 # Yarn
 yarn add react-anchorme
+
+# pnpm
+pnpm add react-anchorme
 ```
 
 ## 🖲 Usage

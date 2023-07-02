@@ -13,7 +13,12 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "importHelpers": true,
+    "baseUrl": "./",
+    "paths": {
+      "tslib": ["node_modules/tslib/tslib.d.ts"]
+    }
   },
-  "include": ["src"]
+  "include": ["src"],
 }

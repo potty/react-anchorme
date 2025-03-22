@@ -12,7 +12,7 @@ export const Link = ({
 	linkComponent,
 	truncate,
 	...rest
-}: Props): JSX.Element => {
+}: Props): React.ReactElement => {
 	const Component = linkComponent ?? 'a'
 	const protocol = getProtocol(href)
 	const text = truncate ? truncateText(href, truncate) : href

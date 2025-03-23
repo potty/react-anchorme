@@ -1,4 +1,4 @@
-import typescript from 'rollup-plugin-typescript2'
+import typescript from '@rollup/plugin-typescript'
 import sizes from 'rollup-plugin-sizes'
 import terser from '@rollup/plugin-terser'
 import pkg from './package.json' assert { type: 'json' }

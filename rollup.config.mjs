@@ -9,7 +9,7 @@ const pkg = require('./package.json')
 export default {
 	input: 'src/index.ts',
 	output: [
-		{ file: pkg.main, format: 'cjs' },
+		{ file: pkg.main, format: 'cjs', interop: 'auto' },
 		{ file: pkg.module, format: 'es' },
 	],
 	external: ['react', 'anchorme'],

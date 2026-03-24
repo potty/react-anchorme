@@ -1,7 +1,10 @@
+import { createRequire } from 'node:module'
 import typescript from '@rollup/plugin-typescript'
 import sizes from 'rollup-plugin-sizes'
 import terser from '@rollup/plugin-terser'
-import pkg from './package.json' assert { type: 'json' }
+
+const require = createRequire(import.meta.url)
+const pkg = require('./package.json')
 
 export default {
 	input: 'src/index.ts',

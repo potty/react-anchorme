@@ -131,6 +131,33 @@ it('should render with custom component', () => {
 	expect(customCallback).toHaveBeenCalledWith(URL)
 })
 
+it('should render mixed text node and expression children as links', () => {
+	const { container } = render(<Anchorme>testa.com {'testb.com'}</Anchorme>)
+	const links = container.querySelectorAll('a')
+	expect(links).toHaveLength(2)
+	expect(links[0]?.href).toBe('http://testa.com/')
+	expect(links[1]?.href).toBe('http://testb.com/')
+})
+
+it('should render expression children with surrounding spaces', () => {
+	const { container } = render(<Anchorme>{'testa.com'} testb.com</Anchorme>)
+	const links = container.querySelectorAll('a')
+	expect(links).toHaveLength(2)
+	expect(links[0]?.href).toBe('http://testa.com/')
+	expect(links[1]?.href).toBe('http://testb.com/')
+})
+
+it('should render plain text mixed with expression URL', () => {
+	const { container, getByText } = render(
+		<Anchorme>hello {'example.com'} world</Anchorme>,
+	)
+	const links = container.querySelectorAll('a')
+	expect(links).toHaveLength(1)
+	expect(links[0]?.href).toBe('http://example.com/')
+	expect(getByText(/hello/)).toBeInTheDocument()
+	expect(getByText(/world/)).toBeInTheDocument()
+})
+
 it('should render with custom inline component', () => {
 	const customCallback = jest.fn<void, [string]>()
 

@@ -5,12 +5,12 @@ import { AnchorProps, LinkComponent } from './types'
 import { Link } from './Link'
 
 type Props = {
-	children: string
+	children: string | string[]
 	linkComponent?: LinkComponent
 } & AnchorProps
 
 const Anchorme = ({ children, ...rest }: Props) => {
-	const text = children
+	const text = Array.isArray(children) ? children.join('') : children
 
 	const parse = useCallback(() => {
 		const matches = anchorme.list(text)

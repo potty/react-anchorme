@@ -15,10 +15,6 @@ module.exports = {
 		'plugin:react-hooks/recommended',
 		'prettier',
 	],
-	globals: {
-		Atomics: 'readonly',
-		SharedArrayBuffer: 'readonly',
-	},
 	root: true,
 	parser: '@typescript-eslint/parser',
 	parserOptions: {

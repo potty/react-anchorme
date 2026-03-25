@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import anchorme from 'anchorme'
 
 import { AnchorProps, LinkComponent } from './types'
@@ -12,20 +12,22 @@ type Props = {
 const Anchorme = ({ children, ...rest }: Props) => {
 	const text = Array.isArray(children) ? children.join('') : children
 
-	const parse = useCallback(() => {
+	const parsedText = useMemo(() => {
 		const matches = anchorme.list(text)
 		if (matches.length === 0) return text
 
 		const elements = []
 		let lastIndex = 0
-		matches.forEach((match, index) => {
+		matches.forEach((match) => {
 			// Push text located before matched string
 			if (match.start > lastIndex) {
 				elements.push(text.substring(lastIndex, match.start))
 			}
 
 			// Push Link component
-			elements.push(<Link {...rest} key={index} href={match.string} />)
+			elements.push(
+				<Link {...rest} key={`link-${match.start}`} href={match.string} />,
+			)
 
 			lastIndex = match.end
 		})
@@ -36,9 +38,8 @@ const Anchorme = ({ children, ...rest }: Props) => {
 		}
 
 		return elements.length === 1 ? elements[0] : elements
-	}, [text, rest])
-
-	const parsedText = useMemo(() => parse(), [parse])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [text])
 
 	return <>{parsedText}</>
 }

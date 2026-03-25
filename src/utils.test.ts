@@ -18,6 +18,12 @@ describe('getProtocol', () => {
 })
 
 describe('truncateText', () => {
+	const originalNodeEnv = process.env.NODE_ENV
+
+	afterEach(() => {
+		process.env.NODE_ENV = originalNodeEnv
+	})
+
 	it('should return truncated text', () => {
 		const text = truncateText('example.loc', 3)
 		expect(text).toBe('exa…')
@@ -29,11 +35,11 @@ describe('truncateText', () => {
 	})
 
 	it('should throw error when maxLength is not positive number', () => {
-		expect(() => truncateText('example.loc', -1)).toThrowError()
+		expect(() => truncateText('example.loc', -1)).toThrow()
 	})
 
 	it('should not throw error when maxLength is not positive number in production', () => {
 		process.env.NODE_ENV = 'production'
-		expect(() => truncateText('example.loc', -1)).not.toThrowError()
+		expect(() => truncateText('example.loc', -1)).not.toThrow()
 	})
 })

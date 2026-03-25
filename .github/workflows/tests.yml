@@ -2,9 +2,9 @@ name: Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
         run: pnpm install
 
       - name: Run lint
-        run: pnpm lint
+        run: pnpm lint:check
 
       - name: Run tests
         run: pnpm test

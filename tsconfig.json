@@ -1,24 +1,24 @@
 {
-  "compilerOptions": {
-    "sourceMap": true,
-    "module": "esnext",
-    "target": "es5",
-    "rootDir": "src",
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "jsx": "react",
-    "skipLibCheck": true,
-    "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "importHelpers": true,
-    "baseUrl": "./",
-    "paths": {
-      "tslib": ["node_modules/tslib/tslib.d.ts"]
-    }
-  },
-  "include": ["src"],
+	"compilerOptions": {
+		"sourceMap": true,
+		"module": "esnext",
+		"target": "es5",
+		"rootDir": "src",
+		"outDir": "dist",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"jsx": "react",
+		"skipLibCheck": true,
+		"declaration": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"importHelpers": true,
+		"baseUrl": "./",
+		"paths": {
+			"tslib": ["node_modules/tslib/tslib.d.ts"]
+		}
+	},
+	"include": ["src"]
 }

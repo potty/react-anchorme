@@ -13,5 +13,9 @@ export default {
 		{ file: pkg.module, format: 'es' },
 	],
 	external: ['react', 'anchorme'],
-	plugins: [typescript(), terser(), sizes()],
+	plugins: [
+		typescript({ tsconfig: './tsconfig.build.json' }),
+		terser(),
+		sizes(),
+	],
 }
